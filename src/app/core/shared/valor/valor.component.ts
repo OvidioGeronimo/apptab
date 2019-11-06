@@ -6,10 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./valor.component.scss'],
 })
 export class ValorComponent implements OnInit {
-
   @Input()
   valor:number;
-
 
   constructor() { }
 

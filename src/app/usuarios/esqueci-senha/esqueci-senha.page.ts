@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UsuariosService } from './../shared/usuarios.service';
-import { ToastService } from './../../core/shared/toast.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UsuariosService } from '../shared/usuarios.service';
+import { ToastService } from '../../core/shared/toast.service';
 
 @Component({
   selector: 'app-esqueci-senha',
@@ -10,21 +10,21 @@ import { ToastService } from './../../core/shared/toast.service';
 })
 export class EsqueciSenhaPage implements OnInit {
   formEsqueciSenha: FormGroup;
-
-  constructor(private formBuilder: FormBuilder, private usuariosService: UsuariosService,
+  
+  constructor( private formBuilder: FormBuilder, private usuariosService: UsuariosService,
     private toast: ToastService) { }
 
   ngOnInit() {
-     this.criarFormulario();
+    this.criarFormulario();
   }
-    get email() { return this.formEsqueciSenha.get('email'); }
 
-criarFormulario() {
+  get email() { return this.formEsqueciSenha.get('email'); }
+
+  criarFormulario() {
     this.formEsqueciSenha = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]]
     });
   }
-
 
   onSubmit() {
     if (this.formEsqueciSenha.valid) {
@@ -37,4 +37,6 @@ criarFormulario() {
         });
     }
   }
+
+
 }

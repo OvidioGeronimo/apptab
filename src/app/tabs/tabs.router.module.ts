@@ -17,12 +17,11 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'tab2',
+        path: 'pedidos',
         children: [
           {
             path: '',
-            loadChildren: () =>
-              import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+            loadChildren: '../pedidos/lista-pedido/lista-pedido.module#ListaPedidoPageModule'
           }
         ]
       },
@@ -31,13 +30,10 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren:'../usuarios/perfil/perfil.module#PerfilPageModule'
-
+            loadChildren: '../usuarios/perfil/perfil.module#PerfilPageModule'
           }
         ]
       },
-
-      
       {
         path: '',
         redirectTo: '/tabs/produtos',
@@ -50,36 +46,35 @@ const routes: Routes = [
     children: [
       {
         path: 'enderecos',
-        loadChildren:'../enderecos/lista-endereco/lista-endereco.module#ListaEnderecoPageModule'
+        loadChildren: '../enderecos/lista-endereco/lista-endereco.module#ListaEnderecoPageModule'
       },
       {
         path: 'enderecos/novo',
-        loadChildren:'../enderecos/form-endereco/form-endereco.module#FormEnderecoPageModule'
+        loadChildren: '../enderecos/form-endereco/form-endereco.module#FormEnderecoPageModule'
       },
       {
         path: 'enderecos/editar/:key',
-        loadChildren:'../enderecos/form-endereco/form-endereco.module#FormEnderecoPageModule'
+        loadChildren: '../enderecos/form-endereco/form-endereco.module#FormEnderecoPageModule'
       }
     ]
-  },
+  },  
   {
     path: 'pedido',
     children: [
       {
         path: 'carrinho/novo-item/:key',
-        loadChildren:'../pedidos/form-item-pedido/form-item-pedido.module#FormItemPedidoPageModule'
+        loadChildren: '../pedidos/form-item-pedido/form-item-pedido.module#FormItemPedidoPageModule'
       },
       {
         path: 'carrinho',
-        loadChildren:'../pedidos/lista-item-pedido/lista-item-pedido.module#ListaItemPedidoPageModule'
+        loadChildren: '../pedidos/lista-item-pedido/lista-item-pedido.module#ListaItemPedidoPageModule'
       },
       {
         path: 'forma-pagamento',
-        loadChildren:'../pedidos/form-pagamento/form-pagamento.module#FormPagamentoPageModule'
+        loadChildren: '../pedidos/form-pagamento/form-pagamento.module#FormPagamentoPageModule'
       }
     ]
-  },
-
+  },    
   {
     path: '',
     redirectTo: '/tabs/produtos',

@@ -4,8 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { SharedModule } from '../../core/shared/shared/shared.module';
 
-
-
 import { EsqueciSenhaPage } from './esqueci-senha.page';
 
 const routes: Routes = [

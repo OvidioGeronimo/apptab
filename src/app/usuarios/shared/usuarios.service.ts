@@ -23,17 +23,6 @@ export class UsuariosService {
     });
   }
 
-  logout() {
-    return this.afAuth.auth.signOut();
-  }
-  getDadosUsuario(){
-    const user = { name:'', email:''};
-    if (this.afAuth.auth.currentUser) {
-      user.name = this.afAuth.auth.currentUser.displayName;
-      user.email = this.afAuth.auth.currentUser.email;
-    }
-    return user;
-  }
 
   login(email: string, senha: string) {
     return new Promise((resolve, reject) => {
@@ -52,7 +41,7 @@ export class UsuariosService {
     });
   }
 
-enviarEmailResetarSenha(email: string) {
+  enviarEmailResetarSenha(email: string) {
     return new Promise((resolve, reject) => {
       this.afAuth.auth.sendPasswordResetEmail(email)
         .then(() => {
@@ -62,6 +51,20 @@ enviarEmailResetarSenha(email: string) {
           reject(this.handlerError(error));
         });
     });
+  }
+  
+  logout() {
+    return this.afAuth.auth.signOut();
+  }
+
+  getDadosUsuario(){
+    const user = { name: '', email: ''};
+    if (this.afAuth.auth.currentUser) {
+      user.name = this.afAuth.auth.currentUser.displayName;
+      user.email = this.afAuth.auth.currentUser.email;
+    }
+
+    return user;
   }
 
   handlerError(error: any) {

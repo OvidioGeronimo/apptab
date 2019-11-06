@@ -7,20 +7,22 @@ import { ValorComponent } from '../valor/valor.component';
 import { ListaEnderecoPage } from 'src/app/enderecos/lista-endereco/lista-endereco.page';
 
 @NgModule({
-  declarations: [ValorComponent],
+  declarations: [ValorComponent, ListaEnderecoPage],
   imports: [
     CommonModule,
     IonicModule,
     RouterModule,
     ReactiveFormsModule
+
   ],
   exports:[
     CommonModule,
     IonicModule,
     RouterModule,
     ReactiveFormsModule,
-    ValorComponent
+    ValorComponent,
+    ListaEnderecoPage
   ],
-  entryComponents:[ValorComponent]
+  entryComponents:[ValorComponent, ListaEnderecoPage]
 })
 export class SharedModule { }

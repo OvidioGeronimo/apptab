@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastService } from './../../core/shared/toast.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UsuariosService } from '../shared/usuarios.service';
 import { Router } from '@angular/router';
-import { UsuariosService } from './../shared/usuarios.service';
+import { ToastService } from '../../core/shared/toast.service';
 
 @Component({
   selector: 'app-login',
@@ -11,18 +11,18 @@ import { UsuariosService } from './../shared/usuarios.service';
 })
 export class LoginPage implements OnInit {
   formLogin: FormGroup;
-
+  
   constructor(private formBuilder: FormBuilder, private usuariosService: UsuariosService,
     private router: Router, private toast: ToastService) { }
 
   ngOnInit() {
-   this.criarFormulario(); 
+    this.criarFormulario();
   }
+
   get email() { return this.formLogin.get('email'); }
   get senha() { return this.formLogin.get('senha'); }
-  
 
-   criarFormulario() {
+  criarFormulario() {
     this.formLogin = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       senha: ['', [Validators.required]]
@@ -39,10 +39,6 @@ export class LoginPage implements OnInit {
           this.toast.show(mensagem);
         });
     }
-  }
-
-
-
-
+  }  
 
 }

@@ -11,7 +11,7 @@
   <form [formGroup]="formEndereco" (ngSubmit)="onSubmit()">
     <ion-item>
       <ion-label position="stacked">CEP</ion-label>
-      <ion-input type="string" formControlName="cep"></ion-input>
+      <ion-input type="number" formControlName="cep" placeholder="somente números"></ion-input>
     </ion-item>
 
     <ion-item>

@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
-
-
 import { ListaProdutosPage } from './lista-produtos.page';
 import { SharedModule } from '../../core/shared/shared/shared.module';
 
