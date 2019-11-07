@@ -11,7 +11,7 @@ import { map } from 'rxjs/operators';
 })
 export class PedidoService {
 
-  public static TIPO_FORMA_PAGAMENTO = {
+  public static TIPO_FORMA_PAGAMENTO = {//tamos ai
     DINHEIRO: 1,
     CARTAO: 2
   };
